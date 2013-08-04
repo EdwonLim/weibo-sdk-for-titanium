@@ -2,6 +2,8 @@ var Tag = 'WeiboSDK-';
 
 var Storage = Titanium.App.Properties;
 
+var Timeout = 5000;
+
 var Util = {
     bindParam : function(obj, isEncode) {
         var queryParams = [];
@@ -32,7 +34,7 @@ var Util = {
                         message : e.error
                     }, true);
                 },
-                timeout : 5000
+                timeout : Timeout
             });
             client.open(type.toString(), url.toString());
             client.send();
